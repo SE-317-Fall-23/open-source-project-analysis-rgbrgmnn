@@ -64,6 +64,6 @@ Look for the "Issues" tab on the repository's page.
 Use the search bar within the Issues tab to search for terms related to testing, such as "testing strategy," "test cases," or "test automation."
 -->
 - Investigate any discussions related to testing practices within the project.
-- Give a link to the Github PR or issue
+- Give a link to the Github PR or issu
 - Summarize key points or insights from these discussions.
 - Offer your interpretation of how the project's testing practices align with industry standards or best practices.
