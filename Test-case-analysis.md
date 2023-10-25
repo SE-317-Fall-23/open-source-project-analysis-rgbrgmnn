@@ -262,5 +262,5 @@ interpret: function(args) {
 ### F. Transition
 - Explain the actions or events that trigger a change in the system's state.
 ### G. Expected State
-- Clearly outline the expected state or outcome after the test steps have been completed
+- Clearly outline the expected state or outcome after the test steps have been completed.
 
