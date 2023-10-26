@@ -8,6 +8,23 @@
 ### A. Description
 - This test case is designed to verify that JSHint can correctly extract JavaScript code from an HTML document and report indentation errors within the JavaScript code, especially with multiple \<script\> fragments.
 ### B. Gherkin Syntax (if applicable)
+The embedded HTML to be tested
+```JavaScript
+var html = [
+      "<html>",
+      "<script type='text/javascript'>",
+      "  /* jshint indent: 2*/",
+      "  var a = 1;",
+      "    var b = 1", // misindented on purpose
+      "</script>",
+      "<p>nothing</p>",
+      "<script type='text/javascript'>",
+      "  /* jshint indent: 2*/",
+      "      var a = 1", // misindented on purpose
+      "</script>",
+      "</html>"
+    ].join("\n");
+```
 - **Feature**: Indentation error reporting in embedded JavaScript within HTML
 - As a developer using JSHint:
 - I want to ensure that misindented JavaScript code within multiple HTML \<script\> tags are correctly identified
@@ -18,7 +35,6 @@
 - And the first error should be on line 5
 - And the second error should be on line 10
 - And JSHint should exit with a code indicating linting errors were found
-- If you choose to use Gherkin syntax, write the Gherkin scenario for this test case.
 ### C. Test Steps
 1. Initialize Environment:
     - Load the custom reporter from '../example/reporter.js'
@@ -121,12 +137,6 @@ interpret: function(args) {
     }, done));
   }
   ```
-### E. Initial State
-- Describe the initial state or conditions of the system or component before executing the test.
-### F. Transition
-- Explain the actions or events that trigger a change in the system's state.
-### G. Expected State
-- Clearly outline the expected state or outcome after the test steps have been completed.
 
 ## III. Test Case 2: usingMultipleFiles
 ### A. Description
@@ -257,10 +267,4 @@ interpret: function(args) {
     }, done));
   }
 ```
-### E. Initial State
-- Describe the initial state or conditions of the system or component before executing the test.
-### F. Transition
-- Explain the actions or events that trigger a change in the system's state.
-### G. Expected State
-- Clearly outline the expected state or outcome after the test steps have been completed.
 
